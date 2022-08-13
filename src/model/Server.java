@@ -12,13 +12,7 @@ public class Server {
         this.serverSocket = serverSocket;
     }
 
-    public static void main(String[] args) throws Exception {
-        System.out.println("Server is start");
-        ServerSocket serverSocket = new ServerSocket(9000);
-        System.out.println("Server is Running");
-        Server server = new Server(serverSocket);
-        server.runServer();
-    }
+
 
     public void closeServer() {
         try {

@@ -26,7 +26,7 @@ public class Client {
 
     public void clientSendMessage(String message) {
         try {
-            bufferedWriter.write(userName + ":" + message);
+            bufferedWriter.write(userName + " : " + message);
             bufferedWriter.newLine();
             bufferedWriter.flush();
         } catch (IOException e) {

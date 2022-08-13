@@ -18,8 +18,8 @@ public class ClientInitializer extends Application {
         primaryStage.setResizable(false);
         primaryStage.setMaximized(false);
         primaryStage.show();
-    }
 
+    }
     @Override
     public void stop() throws Exception {
         super.stop();
