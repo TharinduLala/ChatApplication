@@ -24,6 +24,7 @@ public class Server {
         try {
             if (serverSocket != null) {
                 serverSocket.close();
+                System.out.println("Server Closed");
             }
         } catch (IOException e) {
             e.printStackTrace();
