@@ -18,8 +18,7 @@ public class ClientFormController implements Initializable {
     public Button sendButton;
     public Button cameraButton;
     public TextArea textField;
-
-    public static  String userName;
+    public static String userName;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -27,7 +26,6 @@ public class ClientFormController implements Initializable {
     }
 
     public void sendMessageOnAction(ActionEvent actionEvent) {
-        System.out.println(userName);
     }
 
     public void openCameraOnAction(ActionEvent actionEvent) {
