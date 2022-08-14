@@ -20,7 +20,7 @@ public class Client {
             this.userName = userName;
         } catch (IOException e) {
             e.printStackTrace();
-            closeAll(socket,bufferedReader,bufferedWriter);
+            closeAll(socket, bufferedReader, bufferedWriter);
         }
     }
 
@@ -31,7 +31,7 @@ public class Client {
             bufferedWriter.flush();
         } catch (IOException e) {
             e.printStackTrace();
-            closeAll(socket,bufferedReader,bufferedWriter);
+            closeAll(socket, bufferedReader, bufferedWriter);
         }
     }
 
@@ -45,7 +45,7 @@ public class Client {
                         ClientFormController.receivedMessage(message, vBox);
                     } catch (IOException e) {
                         e.printStackTrace();
-                        closeAll(socket,bufferedReader,bufferedWriter);
+                        closeAll(socket, bufferedReader, bufferedWriter);
                         e.printStackTrace();
                         break;
                     }
@@ -54,22 +54,21 @@ public class Client {
         }).start();
     }
 
-    public  void closeAll(Socket socket,BufferedReader bufferedReader,BufferedWriter bufferedWriter){
+    public void closeAll(Socket socket, BufferedReader bufferedReader, BufferedWriter bufferedWriter) {
         try {
-            if (bufferedReader!=null){
+            if (bufferedReader != null) {
                 bufferedReader.close();
             }
-            if (bufferedWriter!=null){
+            if (bufferedWriter != null) {
                 bufferedWriter.close();
             }
-            if (socket!=null){
+            if (socket != null) {
                 socket.close();
             }
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
 }
 
 
