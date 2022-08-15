@@ -18,7 +18,9 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import model.Client;
 
-import java.awt.*;
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.net.Socket;
@@ -105,6 +107,15 @@ public class ClientFormController implements Initializable {
         if (sendFile != null) {
             URL url = Paths.get(String.valueOf(sendFile)).toUri().toURL();
             sendFile(url);
+            BufferedImage bufferedImage = ImageIO.read(new File(sendFile.getPath()));
+            ByteArrayOutputStream bos = new ByteArrayOutputStream();
+            String type = "";
+            int i = sendFile.getName().lastIndexOf(".");
+            if (i > 0) {
+                type = sendFile.getName().substring(i + 1);
+            }
+            ImageIO.write(bufferedImage, type, bos);
+            byte[] data = bos.toByteArray();
         }
     }
 
